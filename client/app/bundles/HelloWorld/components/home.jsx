@@ -19,4 +19,10 @@ const Home = props => {
 	)
 }
 
-export default Home;
+const HomePage = props => {
+  return (
+    <Home heading="Chris Tweedie" subheading="Web Developer" />
+  )
+}
+
+export { Home, HomePage };
