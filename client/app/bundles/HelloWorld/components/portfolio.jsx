@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-class About extends React.Component {
+class Portfolio extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -13,12 +13,12 @@ class About extends React.Component {
     };
     return (
       <div className="container" style={ style }>
-        <h1>About Me</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        <p>Vestibulum nec suscipit nisi, eget sollicitudin nibh. Nunc pellentesque venenatis est ut elementum.</p>
+        <h1>Portfolio</h1>
+        <p>Morbi imperdiet erat id mollis varius. Nulla massa quam, feugiat a neque id, pharetra posuere mauris.</p>
+        <p>Integer eget massa quis libero dictum semper.</p>
       </div>
     )
   };
 }
 
-export default About;
+export default Portfolio;

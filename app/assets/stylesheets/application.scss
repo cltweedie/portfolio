@@ -15,8 +15,10 @@
  */
 
  @import "bootstrap";
+ @import url('https://fonts.googleapis.com/css?family=Archivo');
 
  body {
+ 	font-family: 'Archivo', sans-serif;
  	height: 100vh;
  }
 
