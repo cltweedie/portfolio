@@ -4,11 +4,10 @@ import React from 'react';
 class Portfolio extends React.Component {
   render() {
     let style = {
-      marginTop: '50px'
+      padding: '50px'
     };
-    console.log(this.props.projects);
     return (
-      <div className="container" style={ style }>
+      <div className="container" style={ style } className="route-transition">
         <h1>Portfolio</h1>
         <p>Morbi imperdiet erat id mollis varius. Nulla massa quam, feugiat a neque id, pharetra posuere mauris.</p>
         <p>Integer eget massa quis libero dictum semper.</p>
@@ -18,13 +17,14 @@ class Portfolio extends React.Component {
   };
 
   projects = () => {
-    console.log(this.props.projects);
-    return this.props.projects.map((project) =>
-      <div key={ project.id }>
-        <h2>{ project.title }</h2>
-        <img src={ project.image } alt={ project.title } />
-        <p>{ project.description }</p>
-      </div>
+    return (
+      this.props.projects.map((project) =>
+        <div key={ project.id }>
+          <h2>{ project.title }</h2>
+          <img src={ project.image } alt={ project.title } />
+          <p>{ project.description }</p>
+        </div>
+      )
     )
   }
 }

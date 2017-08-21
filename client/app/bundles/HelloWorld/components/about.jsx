@@ -9,10 +9,10 @@ class About extends React.Component {
 
   render() {
     let style = {
-      marginTop: '50px'
+      padding: '50px'
     };
     return (
-      <div className="container" style={ style }>
+      <div className="container" style={ style } className="route-transition">
         <h1>About Me</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         <p>Vestibulum nec suscipit nisi, eget sollicitudin nibh. Nunc pellentesque venenatis est ut elementum.</p>

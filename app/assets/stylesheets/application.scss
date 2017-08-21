@@ -14,15 +14,18 @@
  *= require_self
  */
 
- @import "bootstrap";
- @import url('https://fonts.googleapis.com/css?family=Archivo');
+@import "bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Archivo');
 
- body {
- 	font-family: 'Archivo', sans-serif;
- 	height: 100vh;
- }
+body {
+	font-family: 'Archivo', sans-serif;
+	height: 100vh;
+}
 
-  .main-container {
- 	height: 100%;
- }
+.main-container {
+	height: 100%;
+}
 
+.route-transition {
+	position: absolute;
+}
