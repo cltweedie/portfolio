@@ -7,32 +7,7 @@ import { Portfolio, PortfolioPage } from './portfolio';
 import { Blog, BlogPage } from './blog';
 import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom'
 import { RouteTransition, presets } from 'react-router-transition';
-import { spring } from 'react-motion';
-
-const fadeConfig = { stiffness: 200, damping: 100 };
-const popConfig = { stiffness: 360, damping: 25 };
-const slideConfig = { stiffness: 330, damping: 50 };
-
-const TRANSITION = {
-  atEnter: {
-      opacity: 0,
-      offset: -100,
-    },
-    atLeave: {
-      opacity: spring(0, fadeConfig),
-      offset: spring(100, slideConfig),
-    },
-    atActive: {
-      opacity: spring(1, fadeConfig),
-      offset: spring(0, slideConfig),
-    },
-    mapStyles(styles) {
-      return {
-        opacity: styles.opacity,
-        transform: `translateX(${styles.offset}%)`,
-      };
-    }
-};
+import TRANSITION from '../constants/transition';
 
 class App extends React.Component {
   constructor(props) {
@@ -55,6 +30,7 @@ class App extends React.Component {
             <SideNav />
           </div>
           <div className="col-md-10" style={{ padding: 0, overflow: 'hidden' }}>
+            <Route exact path="/home" render={ HomePage } />
             <Route render={({location, history, match}) => {
               return (
                 <RouteTransition 
@@ -62,7 +38,6 @@ class App extends React.Component {
                   {...TRANSITION}
                 >
                   <Switch key={ location.key } location={ location }>
-                    <Route exact path="/home" render={ HomePage } />
                     <Route exact path="/about" component={ About } />
                     <Route exact path="/portfolio" render={ PortfolioPage } />
                     <Route exact path="/blog" render={ BlogPage } />
